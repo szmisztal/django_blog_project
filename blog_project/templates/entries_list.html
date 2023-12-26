@@ -1,0 +1,16 @@
+{% extends 'homepage.html' %}
+{% block title %} Entries List {% endblock %}
+{% block site %}
+    {% for entry in entries_list %}
+        <p>------------------------------------------------------------</p>
+        <p>Title: <a href="{% url 'entry_detail' entry.id %}">{{ entry.title}}</a></p>
+        <p>Author: {{ entry.author.username }}</p>
+        <br>
+        <p>Publication date: {{ entry.publication_date }}</p>
+        <br>
+        <p>Text: {{ entry.text }}</p>
+        <br>
+        <p>------------------------------------------------------------</p>
+        <br>
+    {% endfor %}
+{% endblock %}

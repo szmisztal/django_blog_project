@@ -1,0 +1,11 @@
+{% extends 'homepage.html' %}
+{% block title %} Entry Delete {% endblock %}
+{% block site %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <p>Do you really want to delete this entry ?</p>
+        <br>
+        <button type="submit">Delete</button>  <a href="{% url 'entry_detail' entry.id %}">No</a>
+    </form>
+{% endblock %}

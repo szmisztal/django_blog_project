@@ -1,0 +1,16 @@
+{% extends 'homepage.html' %}
+{% block title %} Entry Detail {% endblock %}
+{% block site %}
+    <p>------------------------------------------------------------</p><br>
+    {{ entry_detail.title }}
+    <br>
+    {{ entry_detail.publication_date }}
+    <br>
+    {{ entry_detail.text }}
+    <br>
+    {% if entry_detail.author.id == request.user.id %}
+        <a href="{% url 'entry_update' entry_detail.pk %}">Edit</a>
+        <br>
+        <a href="{% url 'entry_delete' entry_detail.pk %}">Delete</a>
+    {% endif  %}
+{% endblock %}}

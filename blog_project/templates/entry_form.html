@@ -1,0 +1,14 @@
+{% extends 'homepage.html' %}
+{% block title %} Entry Form {% endblock %}
+{% block site %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button type="submit">Save</button>
+        <br>
+        {% if entry.id %}
+            <a href="{% url 'entry_delete' entry.id %}">Delete</a>
+        {% endif %}
+    </form>
+{% endblock %}
