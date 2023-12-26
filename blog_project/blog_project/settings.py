@@ -1,9 +1,9 @@
 from pathlib import Path
-
+from .secret_key import key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'Remember to add SECRET KEY'
+SECRET_KEY = key
 
 DEBUG = True
 
@@ -74,6 +74,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+
+LOGIN_URL = 'login'
 
 USE_I18N = True
 
